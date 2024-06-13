@@ -1,0 +1,4 @@
+#dar permisos de ejecucion al script
+chmod +x asm.sh
+
+bash asm.sh nombrePrograma
