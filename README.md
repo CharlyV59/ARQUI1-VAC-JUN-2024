@@ -75,3 +75,24 @@ qemu-img resize -f raw raspios.img 4G
 8. Ejecutar el archivo .sh
 ./script.sh
 9. Esperar a que termine todo el proceso y hacer las configuraciones pertinentes.
+
+## Alternativo con docker
+1) Instalar docker ya sea en windows o ubuntu
+2) Descargar la imagen de docker mediante el siguiente comando:
+```sh
+docker run -it ghcr.io/carlosperate/qemu-rpi-os-lite:bullseye-latest
+```
+3) Esperar a que termine de descargar todo y ejecutar la imagen con el siguiente comando:
+```sh
+docker run -it -p 5022:5022 ghcr.io/carlosperate/qemu-rpi-os-lite:bullseye-latest
+```
+4) Verificar la ip del contenedor que esta corriendo mediante el siguiente comando
+```sh
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <nombre_o_ID_del_contenedor>
+```
+6) Conectarse con cualquier programa de ssh para acceder a la raspberry con los valores por defecto:
+```sh
+user: pi
+password: raspberry
+```
+
