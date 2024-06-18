@@ -37,6 +37,25 @@ qemu-system-aarch64 \
 
 
 ```
+4.1.1 Script alternativo windows
+```bat
+"C:\Program Files\qemu\qemu-system-aarch64.exe" ^
+ -M raspi3b ^
+  -cpu cortex-a53 ^
+  -m 1G -smp 4 ^
+  -kernel kernel8.img ^
+  -drive file=raspios.img,format=raw,if=sd,index=0 ^
+  -dtb bcm2710-rpi-3-b-plus.dtb ^
+  -append "rw earlyprintk loglevel=8 console=ttyAMA0,115200 dwc_otg.lpm_enable=0 root=/dev/mmcblk0p2 rootdelay=1" ^
+  -serial stdio ^
+  -usb -device usb-mouse -device usb-kbd ^
+  -device usb-net,netdev=net0 ^
+  -netdev user,id=net0,hostfwd=tcp::5555-:22
+echo QEMU is finished
+pause
+
+```
+
 5. Ya dentro de MSY2S ejecutar:
 ```sh
 cd /raspberry/
