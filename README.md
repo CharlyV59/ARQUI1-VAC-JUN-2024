@@ -68,6 +68,10 @@ chmod +x script.sh
 ```sh
 qemu-img resize -f raw raspios.img 4G
 ```
+7.1 Cambiar tamaño en windows crear un archivo resize.bat e ingresar el comando (cambiar nombre de imagen):
+```bat
+"C:\Program Files\qemu\qemu-img.exe" resize -f raw raspios.img 4G
+```
 8. Ejecutar el archivo .sh
 ./script.sh
 9. Esperar a que termine todo el proceso y hacer las configuraciones pertinentes.
