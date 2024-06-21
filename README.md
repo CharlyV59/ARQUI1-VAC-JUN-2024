@@ -202,7 +202,11 @@ ENTRYPOINT qemu-system-aarch64 -machine raspi3b -cpu cortex-a53 -dtb bcm2710-rpi
 ```sh
 sudo docker build -t raspberry .
 ```
-4) Ejecutar el siguiente comando para ejecutar el contenedor
+- 3.1) Tambien pueden bajar la imagen primero del repositorio de docker y continuar con el paso siguiente [RepositorioImagen](https://hub.docker.com/repository/docker/charlyv59/raspberry/general)
+```sh
+sudo docker push charlyv59/raspberry:v1
+```
+4) Ejecutar el siguiente comando para ejecutar el contenedor:
 ```sh
 sudo docker run -d -p 2222:22 --name qemu-raspberry raspberry
 ```
