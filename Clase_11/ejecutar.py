@@ -25,7 +25,7 @@ def escribir_en_archivo(numero):
 # Función para ejecutar el comando ./suma cada 30 segundos
 def ejecutar_comando_suma():
     # print('Suma!')
-    subprocess.run(['./suma'])
+    subprocess.run(['./sumar'])
 
 def obtener_sumatoria_desde_archivo():
     global sumatoria
