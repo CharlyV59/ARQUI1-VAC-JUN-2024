@@ -1,9 +1,13 @@
-After doing the resize, boot it up
-Create this file (in raspbian): /etc/udev/rules.d/90-qemu.rules
-Put this in the file:
-Code: Select all
+# Corregir el tamaño de la imagen de rasperry con qemu
+Despues de cambiar el tamaño del archivo de qemu dentro de la raspberry realizar lo siguiente
 
+Crear este archivo en raspbian con nano: 
+```sh
+/etc/udev/rules.d/90-qemu.rules
+```
+Colocar en el archivo lo siguiente:
+```sh
 KERNEL=="sda", SYMLINK+="mmcblk0"
 KERNEL=="sda?", SYMLINK+="mmcblk0p%n",
-
-Now reboot qemu, and you should be able to run 'sudo raspi-config' and select the expand fs option to fix everything up.
+```
+Reiniciar qemu, ejecutar ahora 'sudo raspi-config' y en opciones avanzadas seleccionar al expansion del sistemas de archivo, esperar a que termine y reiniciar.
